@@ -1,8 +1,10 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.startsWith('http') ? process.env.NEXT_PUBLIC_SITE_URL : 'https://smnstudio.in'
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
+  metadataBase: new URL(siteUrl),
   title: 'Islamic Naat Sound Design Masterclass | SMN Studio',
   description: 'Learn the complete Naat sound design workflow with Arif Sagar — from raw vocal to polished, professional production.',
   keywords: ['Naat sound design', 'Naat mixing', 'Studio One', 'Arif Sagar', 'SMN Studio'],
