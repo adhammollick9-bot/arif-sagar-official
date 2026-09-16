@@ -1,6 +1,18 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
-export const metadata: Metadata = { title: 'Islamic Naat Sound Design Masterclass | SMN Studio', description: 'Learn the complete Naat sound design workflow with Arif Sagar — from raw vocal to polished, professional production.', keywords: ['Naat sound design', 'Naat mixing', 'Studio One', 'Arif Sagar', 'SMN Studio'] }
+export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
+  title: 'Islamic Naat Sound Design Masterclass | SMN Studio',
+  description: 'Learn the complete Naat sound design workflow with Arif Sagar — from raw vocal to polished, professional production.',
+  keywords: ['Naat sound design', 'Naat mixing', 'Studio One', 'Arif Sagar', 'SMN Studio'],
+  icons: { icon: '/icon.svg' },
+  openGraph: {
+    title: 'Islamic Naat Sound Design Masterclass | SMN Studio',
+    description: 'Learn the complete Naat sound design workflow with Arif Sagar — from raw vocal to polished, professional production.',
+    type: 'website',
+    images: [{ url: '/images/arif-sagar-portrait.jpg', alt: 'Arif Sagar of SMN Studio' }],
+  },
+}
 export const viewport: Viewport = { themeColor: '#07111c', width: 'device-width', initialScale: 1, userScalable: true }
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) { return <html lang="en"><body>{children}</body></html> }
